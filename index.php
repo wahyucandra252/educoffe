@@ -488,7 +488,14 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Show a second modal and hide this one with the button below.
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Masukan Email Anda</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword">Masukan Password Anda</label>
+        </div>
       </div>
       <div class="modal-footer">
         <a href="" class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Masuk</a>
@@ -505,7 +512,32 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Hide this modal and show the first with the button below.
+      <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Masukan Nama Lengkap</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Masukan Email</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Masukan No Hp</label>
+        </div>
+        <div class="form-floating mb-3">
+          <select name="" id="" class="form-control">
+            <option value="">-- Pilih Kota --</option>
+            <option value="">BANDUNG</option>
+            <option value="">JAKARTA</option>
+            <option value="">CIAMIS</option>
+            <option value="">BANJAR</option>
+            <option value="">TASIKMALAYA</option>
+          </select>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword">Buat Password Anda</label>
+        </div>
       </div>
       <div class="modal-footer">
         <a href="" class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"> Daftar</a>
