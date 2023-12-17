@@ -186,37 +186,7 @@
     <section id="stats-counter" class="stats-counter">
       <div class="container" data-aos="zoom-out">
 
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Clients</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Projects</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Hours Of Support</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Workers</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-        </div>
+        
 
       </div>
     </section><!-- End Stats Counter Section -->
@@ -249,7 +219,7 @@
                 Seperti senandung rasa dalam setiap tegukan, cappucino adalah tarian lembut antara kopi yang kuat dan kelembutan susu
                 </p>
                 <p class="price">
-                  $5.95
+                  
                 </p>
               </div><!-- Menu Item -->
 
@@ -260,7 +230,7 @@
                   Dalam kegelapan rasa, espresso adalah cahaya yang memancar, membangunkan indera dengan kekuatan dan keaslian kopi yang penuh karakter.
                 </p>
                 <p class="price">
-                  $14.95
+                  
                 </p>
               </div><!-- Menu Item -->
 
@@ -271,7 +241,7 @@
                   Black coffee, sebuah pesta bagi indera; kekuatan kopi murni yang mengalir dalam setiap tegukan, tanpa terhalang oleh tambahan apapun
                 </p>
                 <p class="price">
-                  $8.95
+                  
                 </p>
               </div><!-- Menu Item -->
 
@@ -282,7 +252,7 @@
                 Dalam sentuhan Irish Coffee, kopi bertemu dengan kehangatan whisky, menciptakan harmoni cita rasa yang memeluk hati dengan lembut.Lorem, deren, trataro, filede, nerada
                 </p>
                 <p class="price">
-                  $12.95
+                  
                 </p>
               </div><!-- Menu Item -->
 
@@ -293,7 +263,7 @@
                 Dalam secangkir filter coffee, terdapat kelembutan dan kompleksitas cita rasa; seperti mengalami musim kopi yang berubah seiring waktu.
                 </p>
                 <p class="price">
-                  $12.95
+                  
                 </p>
               </div><!-- Menu Item -->
 
@@ -304,7 +274,7 @@
                   Iced coffee, seakan membawa dinginnya embun pagi ke dalam gelas; menyajikan kehangatan kopi dengan kesegaran es yang menggoda.
                 </p>
                 <p class="price">
-                  $9.95
+                  
                 </p>
               </div><!-- Menu Item -->
 
