@@ -103,66 +103,77 @@
 
               <div class="col-lg-4 menu-item">
                 <a href="#" class="glightbox"><img src="../assets/img/menu/menu-item-1.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Cappucino</h4>
+                <h4>Black Espresso</h4>
                 <p class="ingredients">
-                  Seperti senandung rasa dalam setiap tegukan, cappucino adalah tarian lembut antara kopi yang kuat dan kelembutan susu.
+                Black Espresso dibuat dengan mengekstrak kopi dengan menyalurkan air panas melalui bubuk kopi yang sangat halus. Ini menghasilkan kopi yang kuat dan beraroma khas.
                 </p>
-                <a href="cappucino.php" class="price">
+                <a href="" class="price">
                   Learn
                 </a>
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
                 <a href="../assets/img/menu/menu-item-2.png" class="glightbox"><img src="../assets/img/menu/menu-item-2.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Espresso</h4>
+                <h4>Black Americano</h4>
                 <p class="ingredients">
-                  Dalam kegelapan rasa, espresso adalah cahaya yang memancar, membangunkan indera dengan kekuatan dan keaslian kopi yang penuh karakter.
+                Americano dibuat dengan menambahkan air panas ke shot espresso, menghasilkan minuman dengan kekuatan yang mirip dengan kopi drip namun dengan profil rasa yang berbeda.
                 </p>
-                <a href="espresso.php" class="price">
+                <a href="" class="price">
                   Learn
                 </a>
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
                 <a href="../assets/img/menu/menu-item-3.png" class="glightbox"><img src="../assets/img/menu/menu-item-3.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Irish Coffe</h4>
+                <h4>Drip Coffee</h4>
                 <p class="ingredients">
-                  Dalam sentuhan Irish Coffee, kopi bertemu dengan kehangatan whisky, menciptakan harmoni cita rasa yang memeluk hati dengan lembut.
+                Juga dikenal sebagai kopi filter, metode ini melibatkan meneteskan air panas melalui bubuk kopi dan menyaring cairan melalui filter. Ini adalah cara yang umum digunakan di banyak rumah tangga.
                 </p>
-                <a href="irish.php" class="price">
+                <a href="" class="price">
                   Learn
                 </a>
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
                 <a href="../assets/img/menu/menu-item-4.png" class="glightbox"><img src="../assets/img/menu/menu-item-4.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Black Coffe</h4>
+                <h4>French Press</h4>
                 <p class="ingredients">
-                  Black coffee, sebuah pesta bagi indera; kekuatan kopi murni yang mengalir dalam setiap tegukan, tanpa terhalang oleh tambahan apapun.
+                Kopi kasar direndam dalam air panas, dan kemudian penapis logam atau nilon ditekan turun untuk memisahkan ampas dari cairan.
                 </p>
-                <a href="black.php" class="price">
+                <a href="" class="price">
                   Learn
                 </a>
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
                 <a href="../assets/img/menu/menu-item-5.png" class="glightbox"><img src="../assets/img/menu/menu-item-5.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Filter Coffe</h4>
-                <a href="" class="ingredients">
-                  Dalam secangkir filter coffee, terdapat kelembutan dan kompleksitas cita rasa; seperti mengalami musim kopi yang berubah seiring waktu.
-                </a>
-                <a href="filter.php" class="price">
+                <h4>Cold Brew</h4>
+                <p class="ingredients">
+                Bubuk kopi kasar direndam dalam air dingin selama periode yang lebih lama (biasanya 12-24 jam). Hasilnya adalah kopi yang halus, kurang asam, dan disajikan dingin.
+                </p>
+                <p class="price">
+                  Learn
+                </p>
+              </div><!-- Menu Item -->
+
+              <div class="col-lg-4 menu-item">
+                <a href="../assets/img/menu/menu-item-6.png" class="glightbox"><img src="../assets/img/menu/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
+                <h4>Turkish Coffee</h4>
+                <p class="ingredients">
+                Bubuk kopi halus dimasak bersama air dan gula (opsional) dalam pot khusus yang disebut cezve. Ini dikenal dengan rasa kuat dan disajikan dalam cangkir kecil.
+                </p>
+                <a href="" class="price">
                   Learn
                 </a>
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
                 <a href="../assets/img/menu/menu-item-6.png" class="glightbox"><img src="../assets/img/menu/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Iced Coffe</h4>
+                <h4>Black Vietnamese Coffee</h4>
                 <p class="ingredients">
-                  Iced coffee, seakan membawa dinginnya embun pagi ke dalam gelas; menyajikan kehangatan kopi dengan kesegaran es yang menggoda.
+                Metode ini sering melibatkan penggunaan alat penetas untuk membuat kopi yang kuat dan gelap yang kemudian dicampur dengan susu kental manis.
                 </p>
-                <a href="iced.php" class="price">
+                <a href="" class="price">
                   Learn
                 </a>
               </div><!-- Menu Item -->
