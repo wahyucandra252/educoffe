@@ -1,3 +1,38 @@
+<?php
+include 'config/koneksi.php';
+
+session_start();
+
+if (isset($_POST['login'])){
+
+$email = $_POST['email'];
+$password = md5($_POST['password']);
+
+$q2 = "SELECT * FROM pengguna WHERE email='$email' AND password='$password'";
+$r2 = mysqli_query($conn, $q2);
+$d2 = mysqli_fetch_array($r2);
+
+if (mysqli_num_rows($r2) > 0){
+  $_SESSION['id_pengguna'] = $d2['id_pengguna'];
+  $_SESSION['nama_lengkap'] = $d2['nama_lengkap'];
+  $_SESSION['email'] = $d2['email'];
+  echo "
+  <script>
+  alert('Anda Berhasil Login');
+  window.location = 'pengguna/index.php';
+  </script>
+  ";
+}else{
+  echo "
+  <script>
+  alert('Anda Gagal Login');
+  window.location = 'index.php';
+  </script>
+  ";
+  }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -247,7 +282,7 @@
 
         <div class="row gy-4">
 
-          <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
             <div class="chef-member">
               <div class="member-img">
                 <img src="assets/img/gratis2.jpg" class="img-fluid" alt="">
@@ -260,7 +295,7 @@
             </div>
           </div><!-- End Chefs Member -->
 
-          <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
             <div class="chef-member">
               <div class="member-img">
                 <img src="assets/img/premium2.jpg" class="img-fluid" alt="">
@@ -370,20 +405,22 @@
         <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Masuk</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-          <label for="floatingInput">Masukan Email Anda</label>
+      <form action="" method="post">
+        <div class="modal-body">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
+            <label for="floatingInput">Masukan Email Anda</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+            <label for="floatingPassword">Masukan Password Anda</label>
+          </div>
         </div>
-        <div class="form-floating">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-          <label for="floatingPassword">Masukan Password Anda</label>
+        <div class="modal-footer">
+          <input type="submit" name="login" value="Masuk" class="btn btn-primary"  data-bs-toggle="modal">
+          <a href="" class="btn btn-danger" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Daftar Akun</a>
         </div>
-      </div>
-      <div class="modal-footer">
-        <a href="" class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Masuk</a>
-        <a href="" class="btn btn-danger" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Daftar Akun</a>
-      </div>
+      </form>
     </div>
   </div>
 </div>
