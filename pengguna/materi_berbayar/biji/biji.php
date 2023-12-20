@@ -1,9 +1,9 @@
-<section id="menu" class="menu mt-3">
+    <section id="menu" class="menu mt-3">
   <div class="container" data-aos="fade-up">
 
   <div class="section-header">
-    <h2>MATERI KOPI CAPPUCHINO</h2>
-    <p>Materi <span>Kopi Cappuchino</span></p>
+    <h2>RESEP RESEP KOPI</h2>
+    <p>Materi <span>Mininuman kopi</span></p>
   </div>
 
   <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
@@ -19,7 +19,7 @@
       <div class="row gy-5">
 
         <div class="col-lg-4 menu-item">
-          <a href="" class="glightbox play-btn"><img src="../assets/img/menu/menu-item-1.jpg" class="menu-img img-fluid" alt=""></a>
+          <a href=""><img src="../assets/img/menu/menu-item-1.jpg" class="menu-img img-fluid" alt=""></a>
           <h4>Cappucino</h4>
           <p class="ingredients">
           Seperti senandung rasa dalam setiap tegukan, cappucino adalah tarian lembut antara kopi yang kuat dan kelembutan susu

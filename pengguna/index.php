@@ -65,11 +65,15 @@ if (isset($_SESSION['id_pengguna'])) {
           }elseif($menu == 2) {
               include'materi_gratis/materi_gratis.php';
           }elseif($menu == 3){
-              include'materi_gratis/capuchino.php';
+              include'materi_gratis/cappuchino.php';
           }elseif($menu == 4){
-            include'materi/materigratis.php';
+            include'materi_berbayar/materi_berbayar.php';
           }elseif($menu == 5){
-            include'materi/materigratis.php';
+            include'materi_berbayar/minuman/minuman.php';
+          }elseif($menu == 6){
+            include'materi_berbayar/biji/biji.php';
+          }elseif($menu == 7){
+            include'materi_gratis/tonton.php';
           }
           else{
               include'error.php';
