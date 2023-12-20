@@ -3,27 +3,27 @@ include 'config/koneksi.php';
 
 session_start();
 
-if (isset($_POST['login'])){
+if (isset($_POST['login'])) {
 
-$email = $_POST['email'];
-$password = md5($_POST['password']);
+  $email = $_POST['email'];
+  $password = md5($_POST['password']);
 
-$q2 = "SELECT * FROM pengguna WHERE email='$email' AND password='$password'";
-$r2 = mysqli_query($conn, $q2);
-$d2 = mysqli_fetch_array($r2);
+  $q2 = "SELECT * FROM pengguna WHERE email='$email' AND password='$password'";
+  $r2 = mysqli_query($conn, $q2);
+  $d2 = mysqli_fetch_array($r2);
 
-if (mysqli_num_rows($r2) > 0){
-  $_SESSION['id_pengguna'] = $d2['id_pengguna'];
-  $_SESSION['nama_lengkap'] = $d2['nama_lengkap'];
-  $_SESSION['email'] = $d2['email'];
-  echo "
+  if (mysqli_num_rows($r2) > 0) {
+    $_SESSION['id_pengguna'] = $d2['id_pengguna'];
+    $_SESSION['nama_lengkap'] = $d2['nama_lengkap'];
+    $_SESSION['email'] = $d2['email'];
+    echo "
   <script>
   alert('Anda Berhasil Login');
   window.location = 'pengguna/index.php';
   </script>
   ";
-}else{
-  echo "
+  } else {
+    echo "
   <script>
   alert('Anda Gagal Login');
   window.location = 'index.php';
@@ -52,7 +52,9 @@ if (mysqli_num_rows($r2) > 0){
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -61,8 +63,26 @@ if (mysqli_num_rows($r2) > 0){
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <script type="text/javascript">
+    function getDataKabupaten(data) {
+      var id = "id_prov=" + data;
+      $.ajax({
+        type: 'POST',
+        url: "getDataKabupaten.php",
+        data: id,
+        success: function (hasil) {
+          $("#kab_kota").html(hasil);
+        }
+      });
+    }
+  </script>
 
   <!-- =======================================================
   * Template Name: Yummy
@@ -94,7 +114,8 @@ if (mysqli_num_rows($r2) > 0){
         </ul>
       </nav><!-- .navbar -->
 
-      <a class="btn-book-a-table" href="#book-a-table" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Masuk</a>
+      <a class="btn-book-a-table" href="#book-a-table" data-bs-target="#exampleModalToggle"
+        data-bs-toggle="modal">Masuk</a>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
@@ -105,15 +126,18 @@ if (mysqli_num_rows($r2) > 0){
   <section id="hero" class="hero d-flex align-items-center section-bg">
     <div class="container">
       <div class="row justify-content-between gy-5">
-        <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
+        <div
+          class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
           <h2 data-aos="fade-up">Selamat Datang<br>Mulalah Belajar Membuat Coffe Bersama Kami</h2>
-          <p data-aos="fade-up" data-aos-delay="100">Menyediakan tutorial pembuatan berbagai macam coffe yang akan membantu anda dalam membuat olahan coffe</p>
+          <p data-aos="fade-up" data-aos-delay="100">Menyediakan tutorial pembuatan berbagai macam coffe yang akan
+            membantu anda dalam membuat olahan coffe</p>
           <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-            <a href="#book-a-table" class="btn-book-a-table" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Masuk</a>
+            <a href="#book-a-table" class="btn-book-a-table" data-bs-target="#exampleModalToggle"
+              data-bs-toggle="modal">Masuk</a>
           </div>
         </div>
         <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start">
-          <img src="assets/img/kopitumpah.png" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="300"> 
+          <img src="assets/img/kopitumpah.png" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="300">
         </div>
       </div>
     </div>
@@ -131,7 +155,9 @@ if (mysqli_num_rows($r2) > 0){
         </div>
 
         <div class="row gy-4">
-          <div class="col-lg-7 position-relative about-img" style="background-image: url(assets/img/about.jpg); background-size: cover;" data-aos="fade-up" data-aos-delay="150">
+          <div class="col-lg-7 position-relative about-img"
+            style="background-image: url(assets/img/about.jpg); background-size: cover;" data-aos="fade-up"
+            data-aos-delay="150">
             <!-- <div class="call-us position-absolute">
               <h4>Book a Table</h4>
               <p>+1 5589 55488 55</p>
@@ -140,7 +166,11 @@ if (mysqli_num_rows($r2) > 0){
           <div class="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
             <div class="content ps-0 ps-lg-5">
               <p class="fst-italic">
-              EduCoffee, sebuah aplikasi berbasis web, menawarkan solusi inovatif untuk mengatasi tantangan yang dihadapi oleh barista pemula. Dengan modul pembelajaran interaktif dan tutorial visual yang jelas, EduCoffee membantu barista pemula mengatasi persepsi sulitnya profesi barista. Aplikasi ini juga menangani kurangnya perhatian terhadap faktor-faktor utama pembuatan kopi dengan memberikan informasi yang mendalam dimana masalah masalah yang terjadi adalah
+                EduCoffee, sebuah aplikasi berbasis web, menawarkan solusi inovatif untuk mengatasi tantangan yang
+                dihadapi oleh barista pemula. Dengan modul pembelajaran interaktif dan tutorial visual yang jelas,
+                EduCoffee membantu barista pemula mengatasi persepsi sulitnya profesi barista. Aplikasi ini juga
+                menangani kurangnya perhatian terhadap faktor-faktor utama pembuatan kopi dengan memberikan informasi
+                yang mendalam dimana masalah masalah yang terjadi adalah
               </p>
               <ul>
                 <li><i class="bi bi-check2-all"></i> Kurangnya memperhatikan faktor-faktor dalam penyeduhan kopi </li>
@@ -148,7 +178,10 @@ if (mysqli_num_rows($r2) > 0){
                 <li><i class="bi bi-check2-all"></i> Kurang memahami langkah-langkah membuat kopi</li>
               </ul>
               <p>
-                EduCoffee menawarkan fitur interaktif yang memandu barista pemula melalui setiap langkah. Tujuannya adalah untuk memberikan pengalaman belajar yang mendalam dan meningkatkan rasa percaya diri para barista pemula dalam menguasai seni membuat kopi, sehingga  dapat memperoleh landasan pengetahuan, pengetahuan dan keterampilan yang kokoh dalam profesi Anda.
+                EduCoffee menawarkan fitur interaktif yang memandu barista pemula melalui setiap langkah. Tujuannya
+                adalah untuk memberikan pengalaman belajar yang mendalam dan meningkatkan rasa percaya diri para barista
+                pemula dalam menguasai seni membuat kopi, sehingga dapat memperoleh landasan pengetahuan, pengetahuan
+                dan keterampilan yang kokoh dalam profesi Anda.
 
               </p>
 
@@ -167,7 +200,7 @@ if (mysqli_num_rows($r2) > 0){
     <section id="stats-counter" class="stats-counter">
       <div class="container" data-aos="zoom-out">
 
-        
+
 
       </div>
     </section><!-- End Stats Counter Section -->
@@ -194,68 +227,80 @@ if (mysqli_num_rows($r2) > 0){
             <div class="row gy-5">
 
               <div class="col-lg-4 menu-item">
-                <a href="menu/menucapuchino.php"><img src="assets/img/menu/menu-item-1.jpg" class="menu-img img-fluid" alt=""></a>
+                <a href="menu/menucapuchino.php"><img src="assets/img/menu/menu-item-1.jpg" class="menu-img img-fluid"
+                    alt=""></a>
                 <h4>Cappucino</h4>
                 <p class="ingredients">
-                Seperti senandung rasa dalam setiap tegukan, cappucino adalah tarian lembut antara kopi yang kuat dan kelembutan susu
+                  Seperti senandung rasa dalam setiap tegukan, cappucino adalah tarian lembut antara kopi yang kuat dan
+                  kelembutan susu
                 </p>
                 <p class="price">
-                  
+
                 </p>
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-2.png" class="glightbox"><img src="assets/img/menu/menu-item-2.jpg" class="menu-img img-fluid" alt=""></a>
+                <a href="assets/img/menu/menu-item-2.png" class="glightbox"><img src="assets/img/menu/menu-item-2.jpg"
+                    class="menu-img img-fluid" alt=""></a>
                 <h4>Espresso</h4>
                 <p class="ingredients">
-                  Dalam kegelapan rasa, espresso adalah cahaya yang memancar, membangunkan indera dengan kekuatan dan keaslian kopi yang penuh karakter.
+                  Dalam kegelapan rasa, espresso adalah cahaya yang memancar, membangunkan indera dengan kekuatan dan
+                  keaslian kopi yang penuh karakter.
                 </p>
                 <p class="price">
-                  
+
                 </p>
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img src="assets/img/menu/menu-item-3.jpg" class="menu-img img-fluid" alt=""></a>
+                <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img src="assets/img/menu/menu-item-3.jpg"
+                    class="menu-img img-fluid" alt=""></a>
                 <h4>Black Coffe</h4>
                 <p class="ingredients">
-                  Black coffee, sebuah pesta bagi indera; kekuatan kopi murni yang mengalir dalam setiap tegukan, tanpa terhalang oleh tambahan apapun
+                  Black coffee, sebuah pesta bagi indera; kekuatan kopi murni yang mengalir dalam setiap tegukan, tanpa
+                  terhalang oleh tambahan apapun
                 </p>
                 <p class="price">
-                  
+
                 </p>
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-4.png" class="glightbox"><img src="assets/img/menu/menu-item-4.jpg" class="menu-img img-fluid" alt=""></a>
+                <a href="assets/img/menu/menu-item-4.png" class="glightbox"><img src="assets/img/menu/menu-item-4.jpg"
+                    class="menu-img img-fluid" alt=""></a>
                 <h4>Irish Coffe</h4>
                 <p class="ingredients">
-                Dalam sentuhan Irish Coffee, kopi bertemu dengan kehangatan whisky, menciptakan harmoni cita rasa yang memeluk hati dengan lembut.Lorem, deren, trataro, filede, nerada
+                  Dalam sentuhan Irish Coffee, kopi bertemu dengan kehangatan whisky, menciptakan harmoni cita rasa yang
+                  memeluk hati dengan lembut.Lorem, deren, trataro, filede, nerada
                 </p>
                 <p class="price">
-                  
+
                 </p>
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-5.png" class="glightbox"><img src="assets/img/menu/menu-item-5.jpg" class="menu-img img-fluid" alt=""></a>
+                <a href="assets/img/menu/menu-item-5.png" class="glightbox"><img src="assets/img/menu/menu-item-5.jpg"
+                    class="menu-img img-fluid" alt=""></a>
                 <h4>Filter Coffe</h4>
                 <p class="ingredients">
-                Dalam secangkir filter coffee, terdapat kelembutan dan kompleksitas cita rasa; seperti mengalami musim kopi yang berubah seiring waktu.
+                  Dalam secangkir filter coffee, terdapat kelembutan dan kompleksitas cita rasa; seperti mengalami musim
+                  kopi yang berubah seiring waktu.
                 </p>
                 <p class="price">
-                  
+
                 </p>
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.jpg" class="menu-img img-fluid" alt=""></a>
+                <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.jpg"
+                    class="menu-img img-fluid" alt=""></a>
                 <h4>Iced Coffe</h4>
                 <p class="ingredients">
-                  Iced coffee, seakan membawa dinginnya embun pagi ke dalam gelas; menyajikan kehangatan kopi dengan kesegaran es yang menggoda.
+                  Iced coffee, seakan membawa dinginnya embun pagi ke dalam gelas; menyajikan kehangatan kopi dengan
+                  kesegaran es yang menggoda.
                 </p>
                 <p class="price">
-                  
+
                 </p>
               </div><!-- Menu Item -->
 
@@ -282,7 +327,8 @@ if (mysqli_num_rows($r2) > 0){
 
         <div class="row gy-4">
 
-          <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+          <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200"
+            data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
             <div class="chef-member">
               <div class="member-img">
                 <img src="assets/img/gratis2.jpg" class="img-fluid" alt="">
@@ -295,7 +341,8 @@ if (mysqli_num_rows($r2) > 0){
             </div>
           </div><!-- End Chefs Member -->
 
-          <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+          <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300"
+            data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
             <div class="chef-member">
               <div class="member-img">
                 <img src="assets/img/premium2.jpg" class="img-fluid" alt="">
@@ -337,8 +384,8 @@ if (mysqli_num_rows($r2) > 0){
           <div>
             <h4>Alamat</h4>
             <p>
-            Jl. Dipati Ukur No.112-116, Lebakgede <br>
-            Kecamatan Coblong, Kota Bandung, Jawa Barat 40132 <br>
+              Jl. Dipati Ukur No.112-116, Lebakgede <br>
+              Kecamatan Coblong, Kota Bandung, Jawa Barat 40132 <br>
             </p>
           </div>
 
@@ -382,7 +429,8 @@ if (mysqli_num_rows($r2) > 0){
   </footer><!-- End Footer -->
   <!-- End Footer -->
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <div id="preloader"></div>
 
@@ -397,74 +445,143 @@ if (mysqli_num_rows($r2) > 0){
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-<!----- modal ---->
-<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Masuk</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <!----- modal ---->
+  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Masuk</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="" method="post">
+          <div class="modal-body">
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
+              <label for="floatingInput">Masukan Email Anda</label>
+            </div>
+            <div class="form-floating">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+              <label for="floatingPassword">Masukan Password Anda</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <input type="submit" name="login" value="Masuk" class="btn btn-primary" data-bs-toggle="modal">
+            <a href="" class="btn btn-danger" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Daftar
+              Akun</a>
+          </div>
+        </form>
       </div>
-      <form action="" method="post">
+    </div>
+  </div>
+  <form action="process_daftar.php" class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Daftar Akun</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
         <div class="modal-body">
           <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
-            <label for="floatingInput">Masukan Email Anda</label>
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Masukan Nama Lengkap</label>
           </div>
-          <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
-            <label for="floatingPassword">Masukan Password Anda</label>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Masukan Email</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Masukan No Hp</label>
+          </div>
+          <div class="form-floating mb-3">
+          <select class="FormSelect form-control" onchange="getDataKabupaten(this.value)">
+              <option value="-">= Pilih Provinsi =</option>
+              <?php
+              include 'koneksi.php';
+              $result = selectAllData();
+              while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+                <option value="<?= $row["id_prov"] ?>">
+                  <?= $row["provinsi"] ?>
+                </option>
+              <?php } ?>
+            </select>
+            <br>
+            <select class="FormSelect form-control" id="kab_kota">
+              <option value="tambah">= Pilih Kabupaten/Kota =</option>
+              <?php
+              include 'koneksi.php';
+              $result = selectAllData();
+              while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+                <option value="<?= $row["id_kab"] ?>">
+                  <?= $row["kabupaten_kota"] ?>
+                </option>
+              <?php } ?>
+            </select>
+            <br>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+              <label for="floatingInput">RT</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+              <label for="floatingInput">RW</label>
+            </div>
+            <div class="form-floating mb-3">
+              <select name="" id="" class="form-control">
+                <option value="">-- Agama --</option>
+                <option value="">ISLAM</option>
+                <option value="">KRISTEN</option>
+                <option value="">BUDHA</option>
+                <option value="">HINDU</option>
+              </select>
+            </div>
+            <div class="form-floating mb-3">
+              <select name="" id="" class="form-control">
+                <option value="">-- Jenis Kelamin --</option>
+                <option value="">LAKI-LAKI</option>
+                <option value="">PEREMPUAN</option>
+              </select>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="date" class="form-control" id="floatingDate" placeholder="Tanggal">
+              <label for="floatingDate">Tanggal Lahir</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+              <label for="floatingInput">Alamat</label>
+            </div>
+            <div class="form-floating">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Buat Password Anda</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit"  class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"> Daftar</button>
           </div>
         </div>
-        <div class="modal-footer">
-          <input type="submit" name="login" value="Masuk" class="btn btn-primary"  data-bs-toggle="modal">
-          <a href="" class="btn btn-danger" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Daftar Akun</a>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Daftar Akun</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-          <label for="floatingInput">Masukan Nama Lengkap</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-          <label for="floatingInput">Masukan Email</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-          <label for="floatingInput">Masukan No Hp</label>
-        </div>
-        <div class="form-floating mb-3">
-          <select name="" id="" class="form-control">
-            <option value="">-- Pilih Kota --</option>
-            <option value="">BANDUNG</option>
-            <option value="">JAKARTA</option>
-            <option value="">CIAMIS</option>
-            <option value="">BANJAR</option>
-            <option value="">TASIKMALAYA</option>
-          </select>
-        </div>
-        <div class="form-floating">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-          <label for="floatingPassword">Buat Password Anda</label>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <a href="" class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"> Daftar</a>
       </div>
     </div>
-  </div>
-</div>
-</div>
+              </form>
 </body>
+<script>
+  // Wait for the document to be ready
+  $(document).ready(function () {
+    // Add an event listener for the modal hidden event
+    $('#exampleModalToggle2').on('hidden.bs.modal', function () {
+      // Redirect to the "Masuk" label or section
+      window.location.href = 'index.php';
+    });
+
+    // Optionally, you can also add an event listener to the close button
+    $('#closeRegistrationModal').on('click', function () {
+      // Redirect to the "Masuk" label or section
+      window.location.href = 'index.php';
+    });
+  });
+</script>
+
 </html>
