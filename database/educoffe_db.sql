@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Des 2023 pada 08.40
--- Versi server: 10.4.27-MariaDB
--- Versi PHP: 8.2.0
+-- Generation Time: Dec 20, 2023 at 09:16 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.1.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,40 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengguna`
+-- Table structure for table `materi_berbayar`
+--
+
+CREATE TABLE `materi_berbayar` (
+  `id_coffe` char(5) NOT NULL,
+  `nama_coffe` varchar(50) NOT NULL,
+  `jenis_coffe` varchar(50) NOT NULL,
+  `keterangan` text NOT NULL,
+  `bahan_bahan` text NOT NULL,
+  `alat_alat` text NOT NULL,
+  `link_vidio` varchar(225) NOT NULL,
+  `gambar` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `materi_gratis`
+--
+
+CREATE TABLE `materi_gratis` (
+  `id_coffe` char(5) NOT NULL,
+  `nama_coffe` varchar(50) NOT NULL,
+  `jenis_coffe` varchar(50) NOT NULL,
+  `keterangan` text NOT NULL,
+  `bahan_bahan` text NOT NULL,
+  `alat_alat` text NOT NULL,
+  `link_vidio` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pengguna`
 --
 
 CREATE TABLE `pengguna` (
@@ -46,7 +79,7 @@ CREATE TABLE `pengguna` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `pengguna`
+-- Dumping data for table `pengguna`
 --
 
 INSERT INTO `pengguna` (`id_pengguna`, `nama_lengkap`, `email`, `password`, `provinsi`, `kota`, `kecamatan`, `rt`, `rw`, `kelurahan`, `agama`, `jenis_kelamin`, `tanggal_lahir`, `alamat`, `status`) VALUES
@@ -57,17 +90,29 @@ INSERT INTO `pengguna` (`id_pengguna`, `nama_lengkap`, `email`, `password`, `pro
 --
 
 --
--- Indeks untuk tabel `pengguna`
+-- Indexes for table `materi_berbayar`
+--
+ALTER TABLE `materi_berbayar`
+  ADD PRIMARY KEY (`id_coffe`);
+
+--
+-- Indexes for table `materi_gratis`
+--
+ALTER TABLE `materi_gratis`
+  ADD PRIMARY KEY (`id_coffe`);
+
+--
+-- Indexes for table `pengguna`
 --
 ALTER TABLE `pengguna`
   ADD PRIMARY KEY (`id_pengguna`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `pengguna`
+-- AUTO_INCREMENT for table `pengguna`
 --
 ALTER TABLE `pengguna`
   MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
