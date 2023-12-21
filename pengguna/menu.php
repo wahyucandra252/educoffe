@@ -11,7 +11,7 @@
         <li><a href="index.php?menu=1">Beranda</a></li>
         <li><a href="index.php?menu=2">Materi Gratis</a></li>
         <li><a href="index.php?menu=4">Materi Berbayar</a></li>
-        <li><a href="index.php?menu=">Beli Paket</a></li>
+        <li><a href="index.php?menu=8">Beli Paket</a></li>
     </ul>
     </nav><!-- .navbar -->
 

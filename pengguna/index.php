@@ -74,6 +74,8 @@ if (isset($_SESSION['id_pengguna'])) {
             include'materi_berbayar/biji/biji.php';
           }elseif($menu == 7){
             include'materi_gratis/tonton.php';
+          }elseif($menu == 8){
+            include'paket/paket.php';
           }
           else{
               include'error.php';
