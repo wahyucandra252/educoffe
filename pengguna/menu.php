@@ -20,7 +20,7 @@
         <img src="../assets/img/about.jpg" alt="Foto Profil" width="40" height="40" style="border-radius: 50%; margin-right: 10px;">
         <span class="user-name"><?php echo $_SESSION['nama_lengkap'];?></span>
     </div>
-    <a class="btn-book-a-table" href="#book-a-table" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Keluar</a>
+    <a href="logout.php" class="btn-book-a-table" onclick="return confirm('Apa Anda Yakin Akan Keluar?')">Keluar</a>
     <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
     <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
