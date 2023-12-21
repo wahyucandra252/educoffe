@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2023 at 09:16 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.1.17
+-- Waktu pembuatan: 21 Des 2023 pada 03.59
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 8.0.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,40 +24,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `materi_berbayar`
+-- Struktur dari tabel `coffe`
 --
 
-CREATE TABLE `materi_berbayar` (
-  `id_coffe` char(5) NOT NULL,
+CREATE TABLE `coffe` (
+  `id_coffe` int(5) NOT NULL,
   `nama_coffe` varchar(50) NOT NULL,
   `jenis_coffe` varchar(50) NOT NULL,
-  `keterangan` text NOT NULL,
   `bahan_bahan` text NOT NULL,
   `alat_alat` text NOT NULL,
-  `link_vidio` varchar(225) NOT NULL,
-  `gambar` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `keterangan` text NOT NULL,
+  `link_vidio` varchar(100) NOT NULL,
+  `status` int(5) NOT NULL,
+  `cara_pembuatan` text NOT NULL,
+  `gambar` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `coffe`
+--
+
+INSERT INTO `coffe` (`id_coffe`, `nama_coffe`, `jenis_coffe`, `bahan_bahan`, `alat_alat`, `keterangan`, `link_vidio`, `status`, `cara_pembuatan`, `gambar`) VALUES
+(1, 'cappuchino cingcau', 'cappuchino', 'sajkdsakdsa dsadsadbsakdsakdsad sadsadbsadbsadsabd sad sadsad sajd sajdsajdsajd asjd saj dsajdsajd sajdsajdsajdsajd sajd sajd sajd sajd sajd sajdsajdsadsadasjd', '1. jasasa\r\n2. ajsajsa\r\n3. aksasja\r\n4. iasasja', 'sahsjahsjas', 'https://youtu.be/8PwqlZJrnuQ?si=UlVW4IGWTQ5RDH2e', 0, 'saksjaksjas', 'almond.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `materi_gratis`
---
-
-CREATE TABLE `materi_gratis` (
-  `id_coffe` char(5) NOT NULL,
-  `nama_coffe` varchar(50) NOT NULL,
-  `jenis_coffe` varchar(50) NOT NULL,
-  `keterangan` text NOT NULL,
-  `bahan_bahan` text NOT NULL,
-  `alat_alat` text NOT NULL,
-  `link_vidio` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pengguna`
+-- Struktur dari tabel `pengguna`
 --
 
 CREATE TABLE `pengguna` (
@@ -76,10 +69,10 @@ CREATE TABLE `pengguna` (
   `tanggal_lahir` date NOT NULL,
   `alamat` text NOT NULL,
   `status` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pengguna`
+-- Dumping data untuk tabel `pengguna`
 --
 
 INSERT INTO `pengguna` (`id_pengguna`, `nama_lengkap`, `email`, `password`, `provinsi`, `kota`, `kecamatan`, `rt`, `rw`, `kelurahan`, `agama`, `jenis_kelamin`, `tanggal_lahir`, `alamat`, `status`) VALUES
@@ -90,29 +83,29 @@ INSERT INTO `pengguna` (`id_pengguna`, `nama_lengkap`, `email`, `password`, `pro
 --
 
 --
--- Indexes for table `materi_berbayar`
+-- Indeks untuk tabel `coffe`
 --
-ALTER TABLE `materi_berbayar`
+ALTER TABLE `coffe`
   ADD PRIMARY KEY (`id_coffe`);
 
 --
--- Indexes for table `materi_gratis`
---
-ALTER TABLE `materi_gratis`
-  ADD PRIMARY KEY (`id_coffe`);
-
---
--- Indexes for table `pengguna`
+-- Indeks untuk tabel `pengguna`
 --
 ALTER TABLE `pengguna`
   ADD PRIMARY KEY (`id_pengguna`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `pengguna`
+-- AUTO_INCREMENT untuk tabel `coffe`
+--
+ALTER TABLE `coffe`
+  MODIFY `id_coffe` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `pengguna`
 --
 ALTER TABLE `pengguna`
   MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
