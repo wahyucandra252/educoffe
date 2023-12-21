@@ -106,6 +106,8 @@ session_start();
           include'minuman/minuman.php';
         }elseif($menu == 5) {
           include'biji/biji.php';
+        }elseif($menu == 6) {
+          include'dashboard.php';
         }else{
           include'error.php';
         }
