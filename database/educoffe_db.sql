@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2023 at 07:37 AM
+-- Generation Time: Dec 21, 2023 at 07:25 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -20,22 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `educoffe_db`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admin`
---
-
-CREATE TABLE `admin` (
-  `id_admin` int(11) NOT NULL,
-  `nama_admin` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `status` varchar(50) NOT NULL,
-  `no_hanphone` varchar(50) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -96,23 +80,6 @@ INSERT INTO `coffe` (`id_coffe`, `nama_coffe`, `jenis_coffe`, `bahan_bahan`, `al
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pembayaran`
---
-
-CREATE TABLE `pembayaran` (
-  `id_pembayaran` int(11) NOT NULL,
-  `nomor_rekening` int(20) NOT NULL,
-  `tanggal_pembayaran` date NOT NULL,
-  `atas_nama` varchar(50) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `metode_pembayaran` varchar(20) NOT NULL,
-  `id_pengguna` int(11) NOT NULL,
-  `foto` varchar(225) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `pengguna`
 --
 
@@ -146,22 +113,10 @@ INSERT INTO `pengguna` (`id_pengguna`, `nama_lengkap`, `email`, `password`, `pro
 --
 
 --
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id_admin`);
-
---
 -- Indexes for table `coffe`
 --
 ALTER TABLE `coffe`
   ADD PRIMARY KEY (`id_coffe`);
-
---
--- Indexes for table `pembayaran`
---
-ALTER TABLE `pembayaran`
-  ADD PRIMARY KEY (`id_pembayaran`);
 
 --
 -- Indexes for table `pengguna`
@@ -174,22 +129,10 @@ ALTER TABLE `pengguna`
 --
 
 --
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `coffe`
 --
 ALTER TABLE `coffe`
   MODIFY `id_coffe` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
-
---
--- AUTO_INCREMENT for table `pembayaran`
---
-ALTER TABLE `pembayaran`
-  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `pengguna`
