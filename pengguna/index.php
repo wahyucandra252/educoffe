@@ -76,8 +76,17 @@ if (isset($_SESSION['id_pengguna'])) {
             include'materi_gratis/tonton.php';
           }elseif($menu == 8){
             include'paket/paket.php';
-          }
-          else{
+          }elseif($menu == 9){
+            include'materi_gratis/espreso.php';
+          }elseif($menu == 10){
+            include'materi_gratis/black_coffe.php';
+          }elseif($menu == 11){
+            include'materi_gratis/irish_coffe.php';
+          }elseif($menu == 12){
+            include'materi_gratis/filter_coffe.php';
+          }elseif($menu == 13){
+            include'materi_gratis/iced_coffe.php';
+          }else{
               include'error.php';
           }
       }else{

@@ -1,5 +1,5 @@
 <?php
-$query = "SELECT * FROM coffe WHERE status='0' AND jenis_coffe='cappucino' ORDER BY id_coffe ASC";
+$query = "SELECT * FROM coffe WHERE status='0' AND jenis_coffe='irish coffe' ORDER BY id_coffe ASC";
 $sql = mysqli_query($conn, $query);
 ?>
 <section id="menu" class="menu mt-3">
@@ -7,7 +7,7 @@ $sql = mysqli_query($conn, $query);
 
   <div class="section-header">
     <h2>RESEP RESEP KOPI</h2>
-    <p>Materi <span>Minuman kopi Cappuchino</span></p>
+    <p>Materi <span>Mininuman kopi Irish Coffe</span></p>
   </div>
 
   <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
