@@ -19,10 +19,11 @@ $sql = mysqli_query($conn, $query);
   <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
 
     <div class="tab-pane fade active show" id="menu-starters">
-      <?php
-        while($row = mysqli_fetch_array($sql)){
-      ?>
+
       <div class="row gy-5">
+        <?php
+          while($row = mysqli_fetch_array($sql)){
+        ?>
         
         <div class="col-lg-4 menu-item">
           <a href="index.php?menu=7&id=<?php echo $row['id_coffe'];?>"><img src="../assets/img/kopi/<?php echo $row['gambar'];?>" class="menu-img img-fluid" alt=""></a>
@@ -31,11 +32,10 @@ $sql = mysqli_query($conn, $query);
           <p class="price">
           </p>
         </div><!-- Menu Item -->
-
+          <?php
+          }
+        ?>
       </div>
-      <?php
-        }
-      ?>
     </div><!-- End Starter Menu Content -->
 
   </div>
