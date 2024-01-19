@@ -12,16 +12,32 @@ if (isset($_POST['login'])) {
   $r2 = mysqli_query($conn, $q2);
   $d2 = mysqli_fetch_array($r2);
 
+  
+  $q3 = "SELECT * FROM admin WHERE email='$email' AND password='$password'";
+  $r3 = mysqli_query($conn, $q3);
+  $d3 = mysqli_fetch_array($r3);
+
   if (mysqli_num_rows($r2) > 0) {
     $_SESSION['id_pengguna'] = $d2['id_pengguna'];
     $_SESSION['nama_lengkap'] = $d2['nama_lengkap'];
-    $_SESSION['email'] = $d2['email'];
+    $_SESSION['email'] = $d2  ['email'];
     echo "
   <script>
   alert('Anda Berhasil Login');
   window.location = 'pengguna/index.php';
   </script>
   ";
+  } elseif(mysqli_num_rows($r3) > 0){
+    $_SESSION['id_admin'] = $d3['id_admin'];
+    $_SESSION['nama'] = $d3['nama'];
+    $_SESSION['email'] = $d3['email'];
+    echo "
+  <script>
+  alert('Anda Berhasil Login');
+  window.location = 'admin/index.php';
+  </script>
+  ";
+
   } else {
     echo "
   <script>

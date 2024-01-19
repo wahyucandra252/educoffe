@@ -1,79 +1,69 @@
 <?php
-include '../../config/koneksi.php';
-include '../../config/autonumber.php';
-session_start();
+// include'../config/koneksi.php';
 
-$id=$_GET['id'];
-$q2 = "SELECT * FROM pengaduan where id_pengaduan = '$id'";
-$r2 = mysqli_query($koneksi, $q2);
-$data = mysqli_fetch_array($r2);
-
+$query = 'SELECT * FROM pengguna ';
+$sql = mysqli_query($conn, $query);
 ?>
+<section id="menu" class="menu mt-3">
+  <div class="container" data-aos="fade-up">
 
-<div class="modal-dialog">
-	<div class="modal-content">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		</div>
-		<div class="modal-body">
-			<form action="#" method="POST" role="form">
-				<legend>Lihat Detail</legend>
+  <div class="section-header">
+    <h2>DATA PENGGUNA</h2>
+    <p>Data <span>Pengguna EduCoffe</span></p>
+  </div>
 
-				<div class="form-group" >
-					<table class="table">
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td><img src="../assets/foto/<?php echo $data['foto']; ?>" style="width: 100px;"></td>
-						</tr>
-					</table>
-				</div>
+  <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
 
-				<div class="form-group">
-					<table border="1" class="table table-hover">
-						<tr>
-							<td><label>ID PENGADUAN</label></td>
-							<td>:</td>
-							<td>
-								<?php echo $data['id_pengaduan']; ?>
-							</td>
-						</tr>
-						<tr>
-							<td><label>TANGGAL PENGADUAN</label></td>
-							<td>:</td>
-							<td>
-								<?php echo $data['tanggal_pengaduan']; ?>
-							</td>
-						</tr>
-						<tr>
-							<td><label for="">ID PELAPOR</label></td>
-							<td>:</td>
-							<td>
-								<?php  echo $data['nik']; ?>
-							</td>
-						</tr>
-						<tr>
-							<td><label for="">ISI LAPORAN</label></td>
-							<td>:</td>
-							<td>
-								<?php echo $data['isi_laporan']; ?>
-							</td>
-						</tr>
-						<tr>
-							<td><label for="">STATUS</label></td>
-							<td>:</td>
-							<td>
-								<?php echo $data['status'];?>
-							</td>
-						</tr>
-					</table>
-				</div>
+    <!-- End tab nav item -->
 
-					<button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-					<button type="submit" class="btn btn-primary">Simpan</button>
-	
-			</form>
-		</div>
-	</div>
-</div>
+  </ul>
+
+  <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
+
+    <div class="tab-pane fade active show" id="menu-starters">
+
+      <div class="row gy-5">
+		<table class="table table-hover" id="coffeTable">
+			<thead class="table table-dark">
+				<tr>
+					<th>ID PENGGUNA</th>
+					<th>NAMA PENGGUNA</th>
+					<th>EMAIL</th>
+					<th>KOTA</th>
+					<th>JENIS KELAMIN</th>
+					<th>TANGGAL LAHIR</th>
+					<th>AGAMA</th>
+					<th>AKSI</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+					while($row = mysqli_fetch_array($sql)){
+
+				?>
+				<tr>
+					<td><?php echo $row['id_pengguna']; ?></td>
+					<td><?php echo $row['nama_lengkap']; ?></td>
+					<td><?php echo $row['email']; ?></td>
+					<td><?php echo $row['kota']; ?></td>
+					<td><?php echo $row['jenis_kelamin']; ?></td>
+					<td><?php echo $row['tanggal_lahir']; ?></td>
+					<td><?php echo $row['agama']; ?></td>
+					<td>
+						<a href="" class="btn btn-outline-warning">Edit</a>
+						<a href="" class="btn btn-outline-danger">Hapus</a>
+					</td>
+				</tr>
+
+				<?php
+					}
+				?>
+			</tbody>
+		</table>
+      </div>
+    </div><!-- End Starter Menu Content -->
+
+  </div>
+
+  </div>
+</section><!-- End Hero Section -->
