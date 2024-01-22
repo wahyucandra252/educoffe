@@ -62,30 +62,26 @@ if (isset($_SESSION['id_pengguna'])) {
           $menu = $_GET['menu'];
           if($menu == 1){
               include'dashboard.php';
-          }elseif($menu == 2) {
-              include'materi_gratis/materi_gratis.php';
+          }elseif($menu == 2){
+            include'materi/minuman/minuman.php';
           }elseif($menu == 3){
-              include'materi_gratis/cappuchino.php';
+            include'materi/biji/biji.php';
           }elseif($menu == 4){
-            include'materi_berbayar/materi_berbayar.php';
+            include'materi/minuman/cappuchino.php';
           }elseif($menu == 5){
-            include'materi_berbayar/minuman/minuman.php';
+            include'materi/biji/biji.php';
           }elseif($menu == 6){
-            include'materi_berbayar/biji/biji.php';
+            include'materi/minuman/tonton.php';
           }elseif($menu == 7){
-            include'materi_gratis/tonton.php';
+            include'materi/minuman/espreso.php';
           }elseif($menu == 8){
-            include'paket/paket.php';
+            include'materi/minuman/black_coffe.php';
           }elseif($menu == 9){
-            include'materi_gratis/espreso.php';
+            include'materi/minuman/irish_coffe.php';
           }elseif($menu == 10){
-            include'materi_gratis/black_coffe.php';
+            include'materi/minuman/filter_coffe.php';
           }elseif($menu == 11){
-            include'materi_gratis/irish_coffe.php';
-          }elseif($menu == 12){
-            include'materi_gratis/filter_coffe.php';
-          }elseif($menu == 13){
-            include'materi_gratis/iced_coffe.php';
+            include'materi/minuman/iced_coffe.php';
           }else{
               include'error.php';
           }

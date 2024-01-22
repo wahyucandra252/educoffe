@@ -45,15 +45,28 @@ $row = mysqli_fetch_array($sql);
 
         <div class="col-lg-12">
           <h3 for="">Bahan - Bahan</h3><hr>
-          <p class="ingredients">
-            <?php echo $row['bahan_bahan']; ?>
-          </p>
+          <ul class="ingredients">
+            <?php
+              $bahan_bahan = explode("\n", $row['bahan_bahan']);
+              foreach ($bahan_bahan as $bahan) {
+                echo "<li>" . trim($bahan) . "</li>";
+              }
+            ?>
+          </ul>
         </div>
 
         <div class="col-lg-12">
           <h3 for="">Alat alat</h3><hr>
           <p class="ingredients">
-            <?php echo $row['alat_alat']; ?>
+          <ul class="ingredients">
+          <?php
+            $alat_alat = explode("\n", $row['alat_alat']);
+            foreach ($alat_alat as $alat) {
+              echo "<li>" . trim($alat) . "</li>";
+            }
+          ?>
+        </ul>
+       
           </p>
         </div>
 

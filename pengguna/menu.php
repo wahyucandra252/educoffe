@@ -1,6 +1,6 @@
 <div class="container d-flex align-items-center justify-content-between">
 
-    <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+    <a href="index.php?menu=1" class="logo d-flex align-items-center me-auto me-lg-0">
     <!-- Uncomment the line below if you also wish to use an image logo -->
     <!-- <img src="../assets/img/logo.png" alt=""> -->
     <h1>EduCoffe<span>.</span></h1>
@@ -9,9 +9,8 @@
     <nav id="navbar" class="navbar">
     <ul>
         <li><a href="index.php?menu=1">Beranda</a></li>
-        <li><a href="index.php?menu=2">Materi Gratis</a></li>
-        <li><a href="index.php?menu=4">Materi Berbayar</a></li>
-        <li><a href="index.php?menu=8">Beli Paket</a></li>
+        <li><a href="index.php?menu=2">Materi</a></li>
+        <li><a href="index.php?menu=3">Biji Kopi</a></li>
     </ul>
     </nav><!-- .navbar -->
 

@@ -1,5 +1,5 @@
 <?php
-$query = "SELECT * FROM coffe WHERE status='0' AND jenis_coffe='filter coffe' ORDER BY id_coffe ASC";
+$query = "SELECT * FROM coffe WHERE jenis_coffe='cappucino' ORDER BY id_coffe ASC";
 $sql = mysqli_query($conn, $query);
 ?>
 <section id="menu" class="menu mt-3">
@@ -7,7 +7,7 @@ $sql = mysqli_query($conn, $query);
 
   <div class="section-header">
     <h2>RESEP RESEP KOPI</h2>
-    <p>Materi <span>Minuman kopi Filter Coffe</span></p>
+    <p>Materi <span>Minuman kopi Cappuchino</span></p>
   </div>
 
   <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
@@ -26,7 +26,7 @@ $sql = mysqli_query($conn, $query);
         ?>
         
         <div class="col-lg-4 menu-item">
-          <a href="index.php?menu=7&id=<?php echo $row['id_coffe'];?>"><img src="../assets/img/kopi/<?php echo $row['gambar'];?>" class="img-thumbnail" alt="" style="width:100%; height:500px;"></a>
+          <a href="index.php?menu=6&id=<?php echo $row['id_coffe'];?>"><img src="../assets/img/kopi/cappucino/<?php echo $row['gambar'];?>" class="img-thumbnail" alt="" style="width:100%; height:500px;"></a>
           <h4><?php echo $row['nama_coffe'];?></h4>
           <p class="ingredients"><?php echo $row['keterangan'];?></p>
           <p class="price">

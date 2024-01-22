@@ -63,7 +63,7 @@ if (isset($_POST['login'])) {
   <!-- Favicons -->
   <link href="assets/img/logo/logo.jpg" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-  <link href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -118,7 +118,7 @@ if (isset($_POST['login'])) {
       <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1>EduCoffe<span>.</span></h1>
+        <EduCoffe<span>.</span></h1>
       </a>
 
       <nav id="navbar" class="navbar">
@@ -126,7 +126,6 @@ if (isset($_POST['login'])) {
           <li><a href="#hero">Beranda</a></li>
           <li><a href="#about">Tentang Kami</a></li>
           <li><a href="#menu">Materi</a></li>
-          <li><a href="#chefs">Paket</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -243,12 +242,9 @@ if (isset($_POST['login'])) {
             <div class="row gy-5">
 
               <div class="col-lg-4 menu-item">
-<<<<<<< HEAD
                 <a href="menu/menucapuchino.php"><img src="assets/img/menu/menu-item-1.jpg" class="menu-img img-fluid"
                     alt=""></a>
-=======
                 <a href="#" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><img src="assets/img/menu/menu-item-1.jpg" class="menu-img img-fluid" alt=""></a>
->>>>>>> cec0a9abe1641ff1a27afcded6213ef0f0f29d69
                 <h4>Cappucino</h4>
                 <p class="ingredients">
                   Seperti senandung rasa dalam setiap tegukan, cappucino adalah tarian lembut antara kopi yang kuat dan
@@ -260,12 +256,9 @@ if (isset($_POST['login'])) {
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
-<<<<<<< HEAD
                 <a href="assets/img/menu/menu-item-2.png" class="glightbox"><img src="assets/img/menu/menu-item-2.jpg"
                     class="menu-img img-fluid" alt=""></a>
-=======
                 <a href="#" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><img src="assets/img/menu/menu-item-2.jpg" class="menu-img img-fluid" alt=""></a>
->>>>>>> cec0a9abe1641ff1a27afcded6213ef0f0f29d69
                 <h4>Espresso</h4>
                 <p class="ingredients">
                   Dalam kegelapan rasa, espresso adalah cahaya yang memancar, membangunkan indera dengan kekuatan dan
@@ -277,12 +270,9 @@ if (isset($_POST['login'])) {
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
-<<<<<<< HEAD
                 <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img src="assets/img/menu/menu-item-3.jpg"
                     class="menu-img img-fluid" alt=""></a>
-=======
                 <a href="#" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><img src="assets/img/menu/menu-item-3.jpg" class="menu-img img-fluid" alt=""></a>
->>>>>>> cec0a9abe1641ff1a27afcded6213ef0f0f29d69
                 <h4>Black Coffe</h4>
                 <p class="ingredients">
                   Black coffee, sebuah pesta bagi indera; kekuatan kopi murni yang mengalir dalam setiap tegukan, tanpa
@@ -294,12 +284,9 @@ if (isset($_POST['login'])) {
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
-<<<<<<< HEAD
                 <a href="assets/img/menu/menu-item-4.png" class="glightbox"><img src="assets/img/menu/menu-item-4.jpg"
                     class="menu-img img-fluid" alt=""></a>
-=======
                 <a href="assets/img/menu/menu-item-4.png" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><img src="assets/img/menu/menu-item-4.jpg" class="menu-img img-fluid" alt=""></a>
->>>>>>> cec0a9abe1641ff1a27afcded6213ef0f0f29d69
                 <h4>Irish Coffe</h4>
                 <p class="ingredients">
                   Dalam sentuhan Irish Coffee, kopi bertemu dengan kehangatan whisky, menciptakan harmoni cita rasa yang
@@ -311,12 +298,9 @@ if (isset($_POST['login'])) {
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
-<<<<<<< HEAD
                 <a href="assets/img/menu/menu-item-5.png" class="glightbox"><img src="assets/img/menu/menu-item-5.jpg"
                     class="menu-img img-fluid" alt=""></a>
-=======
-                <a href="assets/img/menu/menu-item-5.png" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><img src="assets/img/menu/menu-item-5.jpg" class="menu-img img-fluid" alt=""></a>
->>>>>>> cec0a9abe1641ff1a27afcded6213ef0f0f29d69
+                <a href="assets/img/menu/menu-item-5.png" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><img src="assets/img/menu/menu-item-5.jpg" class="menu-img img-fluid" alt=""></a>>>>>>> cec0a9abe1641ff1a27afcded6213ef0f0f29d69
                 <h4>Filter Coffe</h4>
                 <p class="ingredients">
                   Dalam secangkir filter coffee, terdapat kelembutan dan kompleksitas cita rasa; seperti mengalami musim
@@ -328,12 +312,9 @@ if (isset($_POST['login'])) {
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
-<<<<<<< HEAD
                 <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.jpg"
                     class="menu-img img-fluid" alt=""></a>
-=======
                 <a href="#" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><img src="assets/img/menu/menu-item-6.jpg" class="menu-img img-fluid" alt=""></a>
->>>>>>> cec0a9abe1641ff1a27afcded6213ef0f0f29d69
                 <h4>Iced Coffe</h4>
                 <p class="ingredients">
                   Iced coffee, seakan membawa dinginnya embun pagi ke dalam gelas; menyajikan kehangatan kopi dengan
@@ -359,11 +340,6 @@ if (isset($_POST['login'])) {
     <!-- ======= Chefs Section ======= -->
     <section id="chefs" class="chefs section-bg">
       <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>Paket</h2>
-          <p>Pilih<span> Paket</span></p>
-        </div>
 
         <div class="row gy-4">
 
