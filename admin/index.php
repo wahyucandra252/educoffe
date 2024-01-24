@@ -72,6 +72,10 @@ if (isset($_SESSION['id_admin'])) {
               include'materi/materiminuman.php';
           }elseif($menu == 4){
             include'materi_berbayar/materi_berbayar.php';
+          }elseif($menu == 5){
+            include'pengguna/form_edit.php';
+          }elseif($menu == 6){
+            include'materi/form_edit.php';
           }else{
               include'error.php';
           }

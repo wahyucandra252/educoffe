@@ -1,53 +1,5 @@
 <?php
 include 'config/koneksi.php';
-
-session_start();
-
-if (isset($_POST['login'])) {
-
-  $email = $_POST['email'];
-  $password = md5($_POST['password']);
-
-  $q2 = "SELECT * FROM pengguna WHERE email='$email' AND password='$password'";
-  $r2 = mysqli_query($conn, $q2);
-  $d2 = mysqli_fetch_array($r2);
-
-  
-  $q3 = "SELECT * FROM admin WHERE email='$email' AND password='$password'";
-  $r3 = mysqli_query($conn, $q3);
-  $d3 = mysqli_fetch_array($r3);
-
-  if (mysqli_num_rows($r2) > 0) {
-    $_SESSION['id_pengguna'] = $d2['id_pengguna'];
-    $_SESSION['nama_lengkap'] = $d2['nama_lengkap'];
-    $_SESSION['email'] = $d2  ['email'];
-    echo "
-  <script>
-  alert('Anda Berhasil Login');
-  window.location = 'pengguna/index.php';
-  </script>
-  ";
-  } elseif(mysqli_num_rows($r3) > 0){
-    $_SESSION['id_admin'] = $d3['id_admin'];
-    $_SESSION['nama'] = $d3['nama'];
-    $_SESSION['email'] = $d3['email'];
-    echo "
-  <script>
-  alert('Anda Berhasil Login');
-  window.location = 'admin/index.php';
-  </script>
-  ";
-
-  } else {
-    echo "
-  <script>
-  alert('Anda Gagal Login');
-  window.location = 'index.php';
-  </script>
-  ";
-  }
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -118,19 +70,18 @@ if (isset($_POST['login'])) {
       <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <EduCoffe<span>.</span></h1>
+        <h1>EduCoffe<span>.</span></h1>
+        
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="#hero">Beranda</a></li>
           <li><a href="#about">Tentang Kami</a></li>
-          <li><a href="#menu">Materi</a></li>
         </ul>
       </nav><!-- .navbar -->
 
-      <a class="btn-book-a-table" href="#book-a-table" data-bs-target="#exampleModalToggle"
-        data-bs-toggle="modal">Masuk</a>
+      <a class="btn-book-a-table" href="pengguna/index.php">Lihat Lebih Banyak</a>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
@@ -147,8 +98,7 @@ if (isset($_POST['login'])) {
           <p data-aos="fade-up" data-aos-delay="100">Menyediakan tutorial pembuatan berbagai macam coffe yang akan
             membantu anda dalam membuat olahan coffe</p>
           <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-            <a href="#book-a-table" class="btn-book-a-table" data-bs-target="#exampleModalToggle"
-              data-bs-toggle="modal">Masuk</a>
+            <a href="pengguna/index.php" class="btn-book-a-table">Lihat Lebih Banyak</a>
           </div>
         </div>
         <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start">
@@ -221,166 +171,12 @@ if (isset($_POST['login'])) {
     </section><!-- End Stats Counter Section -->
 
     <!-- ======= Menu Section ======= -->
-    <section id="menu" class="menu">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>RESEP RESEP KOPI</h2>
-          <p>Materi <span>Mininuman kopi</span></p>
-        </div>
-
-        <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
-
-          <!-- End tab nav item -->
-
-        </ul>
-
-        <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
-
-          <div class="tab-pane fade active show" id="menu-starters">
-
-            <div class="row gy-5">
-
-              <div class="col-lg-4 menu-item">
-                <a href="menu/menucapuchino.php"><img src="assets/img/menu/menu-item-1.jpg" class="menu-img img-fluid"
-                    alt=""></a>
-                <a href="#" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><img src="assets/img/menu/menu-item-1.jpg" class="menu-img img-fluid" alt=""></a>
-                <h4>Cappucino</h4>
-                <p class="ingredients">
-                  Seperti senandung rasa dalam setiap tegukan, cappucino adalah tarian lembut antara kopi yang kuat dan
-                  kelembutan susu
-                </p>
-                <p class="price">
-
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-2.png" class="glightbox"><img src="assets/img/menu/menu-item-2.jpg"
-                    class="menu-img img-fluid" alt=""></a>
-                <a href="#" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><img src="assets/img/menu/menu-item-2.jpg" class="menu-img img-fluid" alt=""></a>
-                <h4>Espresso</h4>
-                <p class="ingredients">
-                  Dalam kegelapan rasa, espresso adalah cahaya yang memancar, membangunkan indera dengan kekuatan dan
-                  keaslian kopi yang penuh karakter.
-                </p>
-                <p class="price">
-
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img src="assets/img/menu/menu-item-3.jpg"
-                    class="menu-img img-fluid" alt=""></a>
-                <a href="#" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><img src="assets/img/menu/menu-item-3.jpg" class="menu-img img-fluid" alt=""></a>
-                <h4>Black Coffe</h4>
-                <p class="ingredients">
-                  Black coffee, sebuah pesta bagi indera; kekuatan kopi murni yang mengalir dalam setiap tegukan, tanpa
-                  terhalang oleh tambahan apapun
-                </p>
-                <p class="price">
-
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-4.png" class="glightbox"><img src="assets/img/menu/menu-item-4.jpg"
-                    class="menu-img img-fluid" alt=""></a>
-                <a href="assets/img/menu/menu-item-4.png" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><img src="assets/img/menu/menu-item-4.jpg" class="menu-img img-fluid" alt=""></a>
-                <h4>Irish Coffe</h4>
-                <p class="ingredients">
-                  Dalam sentuhan Irish Coffee, kopi bertemu dengan kehangatan whisky, menciptakan harmoni cita rasa yang
-                  memeluk hati dengan lembut.Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-5.png" class="glightbox"><img src="assets/img/menu/menu-item-5.jpg"
-                    class="menu-img img-fluid" alt=""></a>
-                <a href="assets/img/menu/menu-item-5.png" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><img src="assets/img/menu/menu-item-5.jpg" class="menu-img img-fluid" alt=""></a>>>>>>> cec0a9abe1641ff1a27afcded6213ef0f0f29d69
-                <h4>Filter Coffe</h4>
-                <p class="ingredients">
-                  Dalam secangkir filter coffee, terdapat kelembutan dan kompleksitas cita rasa; seperti mengalami musim
-                  kopi yang berubah seiring waktu.
-                </p>
-                <p class="price">
-
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.jpg"
-                    class="menu-img img-fluid" alt=""></a>
-                <a href="#" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><img src="assets/img/menu/menu-item-6.jpg" class="menu-img img-fluid" alt=""></a>
-                <h4>Iced Coffe</h4>
-                <p class="ingredients">
-                  Iced coffee, seakan membawa dinginnya embun pagi ke dalam gelas; menyajikan kehangatan kopi dengan
-                  kesegaran es yang menggoda.
-                </p>
-                <p class="price">
-
-                </p>
-              </div><!-- Menu Item -->
-
-            </div>
-          </div><!-- End Starter Menu Content -->
-
-        </div>
-
-      </div>
-    </section><!-- End Menu Section -->
 
     <!-- ======= Testimonials Section ======= -->
 
     <!-- ======= Events Section ======= -->
 
     <!-- ======= Chefs Section ======= -->
-    <section id="chefs" class="chefs section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200"
-            data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
-            <div class="chef-member">
-              <div class="member-img">
-                <img src="assets/img/gratis2.jpg" class="img-fluid" alt="">
-              </div>
-              <!-- <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Patissier</span>
-                <p>Quo esse repellendus quia id. Est eum et accusantium pariatur fugit nihil minima suscipit corporis. Voluptate sed quas reiciendis animi neque sapiente.</p>
-              </div> -->
-            </div>
-          </div><!-- End Chefs Member -->
-
-          <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300"
-            data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
-            <div class="chef-member">
-              <div class="member-img">
-                <img src="assets/img/premium2.jpg" class="img-fluid" alt="">
-                <!-- <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div> -->
-              </div>
-              <!-- <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>Cook</span>
-                <p>Vero omnis enim consequatur. Voluptas consectetur unde qui molestiae deserunt. Voluptates enim aut architecto porro aspernatur molestiae modi.</p>
-              </div> -->
-            </div>
-          </div><!-- End Chefs Member -->
-
-        </div>
-
-      </div>
-    </section><!-- End Chefs Section -->
 
     <!-- ======= Book A Table Section ======= -->
 
@@ -410,7 +206,7 @@ if (isset($_POST['login'])) {
         <div class="col-lg-3 col-md-6 footer-links d-flex">
           <i class="bi bi-telephone icon"></i>
           <div>
-            <h4>Reservasi</h4>
+            <h4>Kontak</h4>
             <p>
               <strong>Telepon:</strong> 0821-1896-2771<br>
               <strong>Email:</strong> EduCoffe@gmail.com<br>

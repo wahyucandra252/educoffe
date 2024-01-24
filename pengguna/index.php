@@ -1,10 +1,5 @@
 <?php
 include '../config/koneksi.php';
-session_start();
-if (isset($_SESSION['id_pengguna'])) {
-    # code...
-  
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,6 +77,8 @@ if (isset($_SESSION['id_pengguna'])) {
             include'materi/minuman/filter_coffe.php';
           }elseif($menu == 11){
             include'materi/minuman/iced_coffe.php';
+          }elseif($menu == 12){
+            include'materi/biji/biji_deskripsi.php';
           }else{
               include'error.php';
           }
@@ -174,14 +171,3 @@ if (isset($_SESSION['id_pengguna'])) {
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
 <!----- modal ---->
-
-<?php 
-  }else{
-    echo 
-    "<script>
-      alert('Harap Login Terlebih Dahulu');
-      window.location='../index.php';
-    </script>";
-    ;
-  }
-?>

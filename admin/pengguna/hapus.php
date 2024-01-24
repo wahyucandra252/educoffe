@@ -2,7 +2,7 @@
 include'../../config/koneksi.php';
 
 $id = $_GET['id'];
-$query = "DELETE FROM pengaduan where id_pengaduan='$id'";
+$query = "DELETE FROM  where id_biji='$id'";
 
 if (mysqli_query($koneksi, $query)) {
 	echo "

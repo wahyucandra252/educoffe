@@ -27,10 +27,10 @@
       <div class="modal-body">
         <div class="row">
             <div class="col-6">
-                <a href="index.php?menu=5"><img src="../assets/img/kopi2.jpg" class="rounded float-start img-thumbnail" alt="..."></a>
+                <a href="index.php?menu=2"><img src="../assets/img/kopi2.jpg" class="rounded float-start img-thumbnail" alt="..."></a>
             </div>
             <div class="col-6">
-                <a href="index.php?menu=6"><img src="../assets/img/biji.jpg" class="rounded float-end img-thumbnail" alt="..."></a>
+                <a href="index.php?menu=3"><img src="../assets/img/biji.jpg" class="rounded float-end img-thumbnail" alt="..."></a>
             </div>
         </div>
       </div>

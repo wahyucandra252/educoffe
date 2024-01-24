@@ -8,8 +8,8 @@ $sql = mysqli_query($conn, $query);
   <div class="container" data-aos="fade-up">
 
   <div class="section-header">
-    <h2>DATA COFFE</h2>
-    <p>Data <span>MATAERI COFFE EduCoffe</span></p>
+    <h2>DATA MINUMAN COFFE</h2>
+    <p>Data <span>MINUMAN COFFE EduCoffe</span></p>
   </div>
 
   <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
@@ -44,8 +44,8 @@ $sql = mysqli_query($conn, $query);
 					<td><?php echo $row['jenis_coffe']; ?></td>
 					<td><?php echo $row['gambar']; ?></td>
 					<td>
-						<a href="" class="btn btn-outline-warning">Edit</a>
-						<a href="" class="btn btn-outline-danger">Hapus</a>
+            <a href="index.php?menu=6&id=<?php echo $row['id_coffe'];?>" class="btn btn-outline-warning">Edit</a>
+						<a href="materi/hapus.php?id=<?php echo $row['id_coffe']; ?>" class="btn btn-outline-danger" onclick="return confirm('Apa Anda Yakin Data Ini Akan di Hapus')">Hapus</a>
 					</td>
 				</tr>
 

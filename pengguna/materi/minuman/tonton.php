@@ -71,17 +71,16 @@ $row = mysqli_fetch_array($sql);
         </div>
 
         <div class="col-lg-12">
-          <h3 for="">Cara Pembuatan</h3><hr>
-          <p class="ingredients">
-            <?php echo $row['cara_pembuatan']; ?>
-          </p>
-        </div>
+  <h3>Cara Pembuatan</h3><hr>
+  <p class="ingredients">
+    <?php
+      $cara_pembuatan = explode("\n", $row['cara_pembuatan']);
+      echo "<ol>";
+      foreach ($cara_pembuatan as $cara) {
+        echo "<li>" . trim($cara) . "</li>";
+      }
+      echo "</ol>";
+    ?>
+  </p>
+</div>
 
-
-      </div>
-    </div><!-- End Starter Menu Content -->
-
-  </div>
-
-  </div>
-</section><!-- End Hero Section -->
