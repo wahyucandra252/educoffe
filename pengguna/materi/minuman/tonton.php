@@ -25,9 +25,15 @@ $row = mysqli_fetch_array($sql);
 
       <div class="row gy-5">
 
-        <div class="col-lg-12 menu-item">
-          <a href="<?php echo $row['link_vidio'];?>" class="glightbox play-btn"><img src="../assets/img/kopi/<?php echo $row['gambar'];?>" style="width:50%;" class="menu-img img-fluid" alt=""></a>
-        </div><!-- Menu Item -->
+      <div class="col-lg-12 menu-item">
+      <a href="<?php echo $row['link_vidio'];?>" class="glightbox play-btn" style="position: relative; display: inline-block;">
+    <img src="../assets/img/kopi/<?php echo $row['gambar'];?>" style="width:50%;" class="menu-img img-fluid" alt="">
+    <img src="../assets/img/play.png" class="play-icon" style="position: absolute; width:80px; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1;" alt="Play">
+</a>
+
+
+
+      </div><!-- Menu Item -->
 
         <div class="col-lg-12">
           <h3 for=""><?php echo $row['nama_coffe']; ?></h3><hr>

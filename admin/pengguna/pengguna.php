@@ -75,25 +75,32 @@ $sql = mysqli_query($conn, $query);
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-		<form action="">
+		<form action="pengguna/simpan.php" method="post" role="form" enctype="multipart/form-data">
 			<div class="mb-3">
-                <input type="text" class="form-control" placeholder="Nama Biji Kopi">
+                <input type="text" class="form-control" placeholder="Nama Biji Kopi" name="nama_biji">
             </div>
 			<div class="mb-3">
-                <input type="text" class="form-control" placeholder="Asal Biji Kopi">
+				<input type="hidden" class="form-control" placeholder="Nama Kopi" name="id_admin" value="<?php echo $_SESSION['id_admin']; ?>">
+				<input type="text" class="form-control" placeholder="Nama Kopi" name="id_admin" value="<?php echo $_SESSION['id_admin']; ?>" readonly>
+			</div>
+			<div class="mb-3">
+                <input type="text" class="form-control" placeholder="Asal Biji Kopi" name="asal_biji">
             </div>
 			<div class="mb-3">
-                <input type="text" class="form-control" placeholder="karakteristik">	
+                <input type="text" class="form-control" placeholder="karakteristik" name="karakteristik">	
             </div>
 			<div class="mb-3">
-                <input type="file" name="" value="">
+				<!-- <input type="file" class="form-control" placeholder="gambar" name="gambar"> -->
+				<input type="file" class="form-control" name="gambar" id="" required>
             </div>
-			
+			<div class="mb-3">
+                <!-- <input type="file" name="" value=""> -->
+            </div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+				<button type="submit" class="btn btn-primary">Tambah</button>
+			</div>
 		</form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-        <button type="button" class="btn btn-primary">Tambah</button>
       </div>
     </div>
   </div>

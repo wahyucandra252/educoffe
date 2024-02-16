@@ -1,42 +1,43 @@
 <?php
-// include'../config/koneksi.php';
+include'../../config/koneksi.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Ambil data dari form
-    $nama_biji = $_POST["nama_biji"];
-    $asal_biji = $_POST["asal_biji"];
-    $karakteristik = $_POST["karakteristik"];
+$id_admin = $_POST['id_admin'];
+$nama_biji = $_POST['nama_biji'];
+$asal_biji = $_POST['asal_biji'];
+$karakteristik = $_POST['karakteristik'];
+// $gambar = $_POST['gambar'];
+$foto = $_FILES['gambar']['name'];
+$tmp_foto = $_FILES['gambar']['tmp_name'];
 
-    // Proses upload gambar
-    $gambar = ''; // Simpan nama file gambar ke database
-    if ($_FILES["gambar"]["error"] == 0) {
-        $target_dir = "path/to/upload/directory/"; // Ganti dengan direktori tempat Anda ingin menyimpan gambar
-        $gambar = basename($_FILES["gambar"]["name"]);
-        $target_path = $target_dir . $gambar;
+$fotobaru = date('dmYHis').$foto;
+$path = "../../assets/img/kopi/".$fotobaru;
 
-        if (move_uploaded_file($_FILES["gambar"]["tmp_name"], $target_path)) {
-            // Gambar berhasil diupload
-        } else {
-            // Gagal upload gambar
-            echo "Sorry, there was an error uploading your file.";
-        }
-    }
+if(move_uploaded_file($tmp_foto, $path)) {
+	
+	$query = "INSERT INTO biji VALUES ('','$id_admin','$nama_biji','$asal_biji','$karakteristik','$fotobaru')";
 
-    // Insert data ke database
-    $query_insert = "INSERT INTO biji (nama_biji, asal_biji, karakteristik, gambar) 
-                    VALUES ('$nama_biji', '$asal_biji', '$karakteristik', '$gambar')";
-    $result_insert = mysqli_query($conn, $query_insert);
+	if (mysqli_query($conn, $query)) {
+		echo "
+		<script>
+		alert('Data Berhasil di Tambahkan');
+		window.location = '../index.php?menu=2';
+		</script>
+		";
+	}else{
+		echo "
+		<script>
+		alert('Data Gagal di Tambahkan');
+		window.location = '../index.php?menu=2';
+		</script>
+		";
+	}
+}else{
+	echo "
+	<script>
+	alert('Data Gagal Disimpan');
+	window.location = '../index.php?menu=2';
+	</script>
+	";
+	}
 
-    if ($result_insert) {
-        // Data berhasil disimpan
-        header("Location: index.php?menu=1"); // Ganti dengan halaman yang sesuai
-        exit();
-    } else {
-        // Gagal menyimpan data
-        echo "Error: " . $query_insert . "<br>" . mysqli_error($conn);
-    }
-}
-
-// Tutup koneksi database jika diperlukan
-// mysqli_close($conn);
 ?>

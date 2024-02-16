@@ -47,12 +47,14 @@ $row = mysqli_fetch_array($sql);
             <div class="form-group mt-3">
                 <h5>Bahan Bahan</h5>
                 <hr>
-                <input type="text" name="bahan_bahan" value="<?php echo $row['bahan_bahan']?>" class="form-control">
+                <textarea name="bahan_bahan" id="" cols="30" rows="10" class="form-control"><?php echo $row['bahan_bahan']?></textarea>
+                <!-- <input type="text" name="bahan_bahan" value="" class="form-control"> -->
             </div>
             <div class="form-group mt-3">
                 <h5>Alat Alat</h5>
                 <hr>
-                <input type="text" name="alat_alat" value="<?php echo $row['alat_alat']?>" class="form-control">
+                <textarea name="alat_alat" id="" cols="30" rows="10" class="form-control"><?php echo $row['alat_alat']?></textarea>
+                <!-- <input type="text" name="alat_alat" value="" class="form-control"> -->
             </div>
             <div class="form-group mt-3">
                 <h5>Keterangan</h5>
@@ -67,7 +69,8 @@ $row = mysqli_fetch_array($sql);
             <div class="form-group mt-3">
                 <h5>Cara Pembuatan</h5>
                 <hr>
-                <input type="text" name="cara_pembuatan" value="<?php echo $row['cara_pembuatan']?>" class="form-control">
+                <textarea name="cara_pembuatan" id="" cols="30" rows="10" class="form-control   "><?php echo $row['cara_pembuatan']?></textarea>
+                <!-- <input type="text" name="cara_pembuatan" value="" class="form-control"> -->
             </div>
             <div class="form-group mt-3">
                 <button type="submit" class="btn btn-primary form-control mt-2" onclick="return confirm('Apa Anda Yakin Ingin Mnegubah Data Ini?') ">SIMPAN</button>

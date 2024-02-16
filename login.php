@@ -12,7 +12,7 @@ $r2 = mysqli_query($conn, $q2);
 $d2 = mysqli_fetch_array($r2);
 
 if (mysqli_num_rows($r2) > 0){
-  $_SESSION['nama_admin'] = $d2['nama_admin'];
+  $_SESSION['nama'] = $d2['nama'];
   $_SESSION['id_admin'] = $d2['id_admin'];
   echo "
   <script>

@@ -26,7 +26,7 @@ $sql = mysqli_query($conn, $query);
         ?>
         
         <div class="col-lg-4 menu-item">
-          <a href="index.php?menu=6&id=<?php echo $row['id_coffe'];?>"><img src="../assets/img/kopi/filter/<?php echo $row['gambar'];?>" class="img-thumbnail" alt="" style="width:100%; height:500px;"></a>
+          <a href="index.php?menu=6&id=<?php echo $row['id_coffe'];?>"><img src="../assets/img/kopi/<?php echo $row['gambar'];?>" class="img-thumbnail" alt="" style="width:100%; height:500px;"></a>
           <h4><?php echo $row['nama_coffe'];?></h4>
           <p class="ingredients"><?php echo $row['keterangan'];?></p>
           <p class="price">

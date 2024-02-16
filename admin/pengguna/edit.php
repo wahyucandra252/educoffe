@@ -6,7 +6,7 @@ $nama_biji = $_POST['nama_biji'];
 $asal_biji = $_POST['asal_biji'];
 $karakteristik = $_POST['karakteristik'];
 
-$query = "UPDATE biji SET nama_biji='$nama_biji', asal_biji='$asal_biji', karakteristik='$karakteristik' where id_biji = '$id_biji'";
+$query = "UPDATE biji SET nama_biji='$nama_biji', asal_biji='$asal_biji', karakteristik='$karakteristik' where id_biji='$id_biji'";
 
 if (mysqli_query($conn, $query)) {
 	echo "
